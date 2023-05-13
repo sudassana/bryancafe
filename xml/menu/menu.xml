@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+<menu>
+  <meal>
+    <item>
+      <name>Beetroot and feta salad</name>
+      <price>$15.00</price>
+      <description>Suitable for vegetarians, made with fresh beetroot.</description>
+      <image>beetrootAndFetaSalad.webp</image>
+    </item>
+    <item>
+      <name>Sourdough Rye Sandwich</name>
+      <price>$18.00</price>
+      <description>Cheese and salad sandwich made with organic, sourdough rye bread.</description>
+      <image>sourdoughRyeSandwich.webp</image>
+    </item>
+    <item>
+      <name>Spinach Pie and Salad</name>
+      <price>$20.00</price>
+      <description>Tasty pie with salad with avocado spread and chives.</description>
+      <image>SpinachPieAndSalad.webp</image>
+    </item>
+    <item>
+      <name>Feta pancakes with salad</name>
+      <price>$19.50</price>
+      <description>Tasty pancake filled with feta and salad.</description>
+      <image>fetaPancakesWithSalad.webp</image>
+    </item>
+    <item>
+      <name>Classic Cheeseburger</name>
+      <price>$18.00</price>
+      <description>A classic American style cheeseburger.</description>
+      <image>classicCheeseburger.webp</image>
+    </item>
+    <item>
+      <name>Carbonara Pasta</name>
+      <price>$20.50</price>
+      <description>Italian spaghetti with carbonara sauce with cheese toppings.</description>
+      <image>italianPasta.webp</image>
+    </item>
+    <item>
+      <name>French Fries</name>
+      <price>$14.00</price>
+      <description>Salted golden and crunchy french fries.</description>
+      <image>frenchFries.webp</image>
+    </item>
+    <item>
+      <name>English Breakfast</name>
+      <price>$22.50</price>
+      <description>Beans, sausages, bacons with couple of toast.</description>
+      <image>englishBrekkie.webp</image>
+    </item>
+  </meal>
+  <beverage>
+    <coffeeAndHotChocolate>
+      <item>
+        <size>Small</size>
+        <price>$3.50</price>
+        <description>For coffee, please inform the staff of the coffee type.</description>
+      </item>
+      <item>
+        <size>Regular</size>
+        <price>$4.00</price>
+        <description>For coffee, please inform the staff of the coffee type.</description>
+      </item>
+      <item>
+        <size>Large</size>
+        <price>$4.50</price>
+        <description>For coffee, please inform the staff of the coffee type.</description>
+      </item>
+    </coffeeAndHotChocolate>
+    <other>
+      <item>
+        <name>Soda</name>
+        <price>$3.00</price>
+      </item>
+      <item>
+        <name>Fresh juice</name>
+        <price>$6.00</price>
+      </item>
+      <item>
+        <name>Bottled water</name>
+        <price>$2.00</price>
+      </item>
+      <item>
+        <name>Tea</name>
+        <price>$3.50</price>
+      </item>
+      <item>
+        <name>Smoothies</name>
+        <price>$6.50</price>
+      </item>
+      <item>
+        <name>Milkshakes</name>
+        <price>$5.50</price>
+      </item>
+    </other>
+  </beverage>
+</menu>

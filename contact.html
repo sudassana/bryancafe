@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="images/iconBryanCafe.png">
+    <!-- Google Font CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Playfair+Display&family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="bryanCafe.js"></script>
+    <title>Bryan&apos;s Café | Contact</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom col-12">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" id="navbar-txt">Bryan&apos;s Café</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuItems">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuItems">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item me-5">
+              <a class="nav-link fs-5" id="nav-but" href="index.html">About</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link fs-5" id="nav-but" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link fs-5" id="nav-but" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <h3 class="text-center mt-3">Enquiry Form</h3>
+      <div class="container enquiry">
+        <form class="col-md-4 mx-auto">
+          <div class="mb-3">
+            <label for="lastName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="lastName">
+          </div>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="firstName">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="messageSubject" class="form-label">Message</label>
+            <input type="text" class="form-control" id="messageSubject" placeholder="Subject">
+          </div>
+          <div class="mb-3">
+            <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type your message here"></textarea>
+          </div>
+          <input class="btn btn-primary w-100" type="submit" name="submit" value="Submit" onclick="show()">
+          <div class="alert alert-success alert-dismissible fade" role="alert" id="buttonAlert">
+            Submit button <strong>clicked!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        </form>
+      </div><!-- <div class="container enquiry"> -->
+
+      <div class="container branches col-md-8 my-5">
+        <h3 class="text-center">Branches</h3>
+        <br>
+        <!-- INSERT BRANCHES HERE -->
+      </div><!-- <div class="container branches"> -->
+    </main>
+
+    <footer class="bg-dark d-flex flex-column align-content-center justify-content-center text-center">
+      <p class="text-light fs-6">&copy;<span id="currentYear"></span> Bryan&apos;s Cafe | <a href="privacyPolicy.html" class="text-decoration-none" target="_blank">Privacy Policy</a></p>
+    </footer>
+
+    <style>
+      .bg-custom {
+        background-color: black;
+      }
+    </style>
+
+    <script type="text/javascript">
+      //BEGIN: PROCESS BRANCHES
+      let branchesContainer = document.querySelector(".branches");
+      let xmlDoc = ajaxGetXMLDocument("xml/branch/branch.xml");
+      let itemsInBranch = xmlDoc.querySelectorAll("branch > item");
+
+      for(index = 0; index < itemsInBranch.length; index++)
+      {
+        branchesContainer.appendChild(addBranch(itemsInBranch[index].querySelector("address").textContent
+                                      ,itemsInBranch[index].querySelector("map").textContent
+                                      ,itemsInBranch[index].querySelector("contact").textContent
+                                      ,itemsInBranch[index].querySelector("openingHours").querySelector("weekday").textContent
+                                      ,itemsInBranch[index].querySelector("openingHours").querySelector("weekend").textContent
+                                      ));
+      }
+      //END: PROCESS BRANCHES
+      document.querySelector("#currentYear").textContent = getCurrentYear();
+    </script>
+    <script>
+      function show() {
+        alert("Enquiry message sent!")
+      }
+     </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

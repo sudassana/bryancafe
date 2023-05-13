@@ -1,0 +1,17 @@
+main{min-height:85vh;}
+footer{height: 10vh;}
+
+body #navbar-txt {
+    font-family: 'Yeseva One', cursive;
+    font-size: 2rem;
+}
+
+h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+p, #nav-but {
+    font-family: 'Karla', sans-serif;
+}
+
+#about{background-color: #FEF5ED;}
